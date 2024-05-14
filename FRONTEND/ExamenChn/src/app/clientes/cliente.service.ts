@@ -32,7 +32,13 @@ export class ClienteService {
       );
   }
 
-    
+  deleteClientebyId(codCliente): Observable<any> {
+    console.log(this.appSettings.restApiServiceBaseUri + 'cliente/getCliente/'+ codCliente );
+    return this.http.delete<any>(this.appSettings.restApiServiceBaseUri + 'cliente/delete/'+ codCliente )
+      .pipe(
+        catchError(this.handleError('getClienteModificar', []))
+      );
+  }
   updateCliente(cliente): Observable<any> {
     console.log('actualizamos');
     return this.http.post<any>(this.appSettings.restApiServiceBaseUri + 'cliente/updateCliente', cliente)

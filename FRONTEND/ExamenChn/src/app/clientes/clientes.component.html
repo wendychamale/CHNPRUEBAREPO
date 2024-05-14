@@ -83,7 +83,7 @@
                               <td mat-cell style="text-align: center;" *matCellDef="let row" >
                                   <a class="btn btn-link btn-info btn-just-icon" (click)="viewcliente(row);" matTooltipClass="primary-tooltip" matTooltip="Ver Dependencia" ><i class="fa fa-eye"></i></a>                                                               
                                   <a class="btn btn-link btn-warning btn-just-icon" (click)="actualizar(row.clienteKey);" matTooltipClass="secundary-tooltip" matTooltip="Actualizar" ><i class="fa fa-edit"></i></a>                                     
-                                  <a class="btn btn-link btn-danger btn-just-icon"  (click)="eliminar(row);" matTooltipClass="primary-tooltip" matTooltip="Eliminar Cliente"><i class="fa fa-trash"></i></a>                                           
+                                  <a class="btn btn-link btn-danger btn-just-icon"  (click)="eliminar(row.clienteKey);" matTooltipClass="primary-tooltip" matTooltip="Eliminar Cliente"><i class="fa fa-trash"></i></a>                                           
                                   <a class="btn btn-link btn-success btn-just-icon" (click)="insertarS(row.clienteKey);" matTooltipClass="primary-tooltip" matTooltip="Crear Solicitud" ><i class="fa fa-plus-square"></i></a>                                     
                                          
                                 </td>

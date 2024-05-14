@@ -111,6 +111,24 @@ console.log(dataDep);
 
   }
 
+  eliminar(data) {
+
+
+    this.ClienteService.deleteClientebyId(data).subscribe(
+      data => {
+        if (data.length > 0) {
+          this.clientes = data;
+          console.log(this.clientes);
+        } else {
+          //swal("clientes Nominales", "No se han encontrado clientes", "info")
+        }
+
+        this.dataSource = new MatTableDataSource(this.clientes);
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+      });
+  }
+
 
   modalclienteA(dataDep) {
     console.log(dataDep);
