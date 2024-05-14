@@ -57,4 +57,12 @@ public class SolicitudPrestamoController {
 	public SolicitudPrestamo cambioestado(@RequestBody SolicitudDto solicitud) throws ParseException{
          return this.solicitudService.cambioestado(solicitud); 
 	} 
+        
+        
+           @CrossOrigin(origins = "http://localhost:4200")  
+    @GetMapping("/solicitud/getSolicitudP/{id}")
+	public SolicitudPrestamo getSolicitudIdP(@PathVariable Integer id){
+         return this.solicitudService.buscarSolicitudPorIdP(id); 
+	} 
+        
  }

@@ -4,6 +4,8 @@
  */
 package examen.chn.ExamenPractico.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -30,7 +32,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "solicitud_prestamo", schema = "SIDEP")
+@Table(name = "solicitud_prestamo", schema = "RRHH")
 public class SolicitudPrestamo {
 
     @Id
@@ -41,6 +43,7 @@ public class SolicitudPrestamo {
 
     @ManyToOne
     @JoinColumn(name = "clientekey")
+    @JsonBackReference
     Cliente clientekey;
 
     @Column(name = "montosolicitado")
@@ -65,5 +68,6 @@ public class SolicitudPrestamo {
     BigDecimal tasainteres;
 
     @OneToMany(mappedBy = "solicitudkey", cascade = CascadeType.ALL, orphanRemoval = true)
+     @JsonManagedReference
     private Set<Prestamo> prestamos;
 }

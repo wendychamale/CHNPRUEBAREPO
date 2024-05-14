@@ -11,6 +11,7 @@ import { HttpEvent, HttpRequest, HttpClient, HttpResponse } from '@angular/commo
 import { MatDialogModule } from '@angular/material/dialog';
 import { ViewChild} from '@angular/core';
 import { CrearpagoComponent } from '../pagos/crearpago/crearpago.component';
+import { PagosComponent } from '../pagos/pagos.component';
 @Component({
   selector: 'app-prestamos',
   templateUrl: './prestamos.component.html',
@@ -76,7 +77,20 @@ export class PrestamosComponent implements OnInit {
   }
 
   viewprestamo(item): void {
-          this.modalprestamo(item);
+    this.prestamoservice.getsolicituds(item).subscribe(
+      data => {
+          this.modalprestamo(data);
+      });
+
+         
+          
+
+  }
+  viewprestamop(item): void {
+ 
+          this.modalprestamop(item);
+      
+         
           
 
   }
@@ -88,6 +102,20 @@ export class PrestamosComponent implements OnInit {
     this.modalprestamoCrear(item);
   }
 
+  
+  modalprestamop(dataDep) {
+    console.log(dataDep);
+        const dialogRef = this.dialog.open(PagosComponent, {
+          width: '800px',
+          height: '400',
+          data: dataDep
+        });
+    
+        dialogRef.afterClosed().subscribe(result => {
+    
+        });
+    
+      }
   modalprestamo(dataDep) {
 console.log(dataDep);
     const dialogRef = this.dialog.open(ViewprestamoComponent, {

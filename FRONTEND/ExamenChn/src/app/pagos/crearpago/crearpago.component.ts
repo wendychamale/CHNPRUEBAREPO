@@ -28,6 +28,7 @@ export class CrearpagoComponent implements OnInit {
     public HttpClient: HttpClient,private fb: FormBuilder,  private _location: Location, private datePipe : DatePipe,
     private router: Router,private route:ActivatedRoute,public dialogRef: MatDialogRef<CrearpagoComponent>
   ) { 
+    console.log(data)
     this.clienteKey=data.prestamokey;
  
 
@@ -52,14 +53,7 @@ export class CrearpagoComponent implements OnInit {
        }
 
        console.log("pagamos")
-       if(solicitud.montopagado==0 && solicitud.interescobrado==0){
         this.savesolicitud(solicitud);
-        
-       }else{
-
-
-       }
-       
 
   }
 

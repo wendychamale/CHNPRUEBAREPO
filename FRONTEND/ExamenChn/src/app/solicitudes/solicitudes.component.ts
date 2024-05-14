@@ -62,6 +62,7 @@ export class SolicitudesComponent implements OnInit {
       data => {
         if (data.length > 0) {
           // Transformar el objeto de respuesta a un array de objetos
+          console.log(data)
           this.solicituds = Object.values(data);
           console.log(this.solicituds);
         } else {

@@ -4,6 +4,7 @@
  */
 package examen.chn.ExamenPractico.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,7 +27,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "pago", schema = "SIDEP")
+@Table(name = "pago", schema = "RRHH")
 public class Pago {
 
     @Id
@@ -38,6 +39,7 @@ public class Pago {
     
     @ManyToOne
     @JoinColumn(name = "prestamokey")
+     @JsonBackReference
     Prestamo prestamokey;
 
     @Column(name = "montopagado")

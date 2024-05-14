@@ -24,4 +24,11 @@ export class PrestamosService {
         catchError(this.handleError('getsolicitud', []))
       );
   }
+
+  getsolicituds(id): Observable<any> {
+    return this.http.get<any>(this.appSettings.restApiServiceBaseUri + 'solicitud/getSolicitudP/'+id)
+      .pipe(
+        catchError(this.handleError('getsolicitud', []))
+      );
+  }
 }

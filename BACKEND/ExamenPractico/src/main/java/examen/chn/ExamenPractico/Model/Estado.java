@@ -18,7 +18,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "estado", schema = "SIDEP")
+@Table(name = "estado", schema = "RRHH")
 public class Estado {
     @Id
      @Column(name = "estadokey")

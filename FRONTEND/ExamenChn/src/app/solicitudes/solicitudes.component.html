@@ -41,14 +41,14 @@
                       </ng-container>
                   
                       <ng-container matColumnDef="CODIGOC">
-                        <th mat-header-cell *matHeaderCellDef class="encabezado"> CODIGO CLIENTE </th>
+                        <th mat-header-cell *matHeaderCellDef class="encabezado"> MONTO </th>
                         <td mat-cell style="text-align: center;" *matCellDef="let element"> 
-                          {{ element.clientekey ? element.clientekey.clienteKey : 'N/A' }} 
+                          {{ element.montosolicitado }} 
                         </td>
                       </ng-container>
                       <ng-container matColumnDef="CLIENTE">
-                        <th mat-header-cell *matHeaderCellDef class="encabezado"> CLIENTE </th>
-                        <td mat-cell style="text-align: center;" *matCellDef="let element"> {{ element.clientekey ? element.clientekey.nombre : 'N/A' }} </td>
+                        <th mat-header-cell *matHeaderCellDef class="encabezado"> PLAZO </th>
+                        <td mat-cell style="text-align: center;" *matCellDef="let element"> {{ element.plazosolicitado }} </td>
                       </ng-container>
 
                       <ng-container matColumnDef="ESTADO">

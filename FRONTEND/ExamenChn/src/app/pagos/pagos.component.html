@@ -1,3 +1,18 @@
-<p>
-  pagos works!
-</p>
+<table>
+  <thead>
+    <tr>
+      <th>Pago Key</th>
+      <th>Monto Pagado</th>
+      <th>Interés Cobrado</th>
+      <th>Fecha Pago</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dato of data.pagos">
+      <td>{{ dato.pagokey }}</td>
+      <td>{{ dato.montopagado }}</td>
+      <td>{{ dato.interescobrado }}</td>
+      <td>{{ dato.fechapago | date: 'short' }}</td> <!-- Formateo de fecha opcional -->
+    </tr>
+  </tbody>
+</table>

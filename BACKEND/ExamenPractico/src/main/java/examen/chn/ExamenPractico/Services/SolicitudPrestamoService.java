@@ -69,6 +69,12 @@ public class SolicitudPrestamoService {
         return this.solicitudRepository.findById(id).orElse(null);
     }
     
+   @Transactional (readOnly=true)
+   public SolicitudPrestamo buscarSolicitudPorIdP(Integer id) {
+       Prestamo p= this.prestamoR.findById(id).orElse(null);
+       
+        return this.solicitudRepository.findById(Integer.parseInt(p.getSolicitudkey().getSolicitudkey().toString())).orElse(null);
+    }
      @Transactional(rollbackFor = Exception.class)
     public SolicitudPrestamo updateSolicitudPrestamo(SolicitudPrestamo solicitud) throws ParseException {
         if (solicitudRepository.existsById(Integer.parseInt(solicitud.getSolicitudkey().toString()))) {

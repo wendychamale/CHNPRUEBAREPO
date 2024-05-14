@@ -29,6 +29,7 @@ export class CrearsolicitudComponent implements OnInit {
     private router: Router,private route:ActivatedRoute,public dialogRef: MatDialogRef<CrearsolicitudComponent>
   ) { 
     this.clienteKey=data;
+    console.log(data)
 
   }
 
@@ -59,8 +60,10 @@ export class CrearsolicitudComponent implements OnInit {
   savesolicitud(solicitud){
     console.log(solicitud)
     this.SolicitudService.inssolicitud(solicitud).subscribe(
+
       data=>{
-        if(data.clientekey!=null){
+        console.log(data)
+        if(data.solicitudkey!=null){
           console.log("rsssssssss"+data.msj);
          swal.fire("Solicitud  Creada", data.solicitudKey, "success");
          this.onNoClick();

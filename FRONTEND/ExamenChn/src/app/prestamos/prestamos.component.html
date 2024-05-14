@@ -41,9 +41,15 @@
                       </ng-container>
                   
                       <ng-container matColumnDef="SALDO">
-                        <th mat-header-cell *matHeaderCellDef class="encabezado"> SALDO PENDIENTE </th>
+                        <th mat-header-cell *matHeaderCellDef class="encabezado"> SALDO PENDIENTE CAPITAL </th>
                         <td mat-cell style="text-align: center;" *matCellDef="let element"> 
                           {{ element.saldopendiente}} 
+                        </td>
+                      </ng-container>
+                      <ng-container matColumnDef="CAPITAL">
+                        <th mat-header-cell *matHeaderCellDef class="encabezado"> SALDO PENDIENTE TOTAL </th>
+                        <td mat-cell style="text-align: center;" *matCellDef="let element"> 
+                          {{ element.saldopendientecapital}} 
                         </td>
                       </ng-container>
                       <ng-container matColumnDef="FECHA">
@@ -59,14 +65,15 @@
                       <ng-container matColumnDef="OPCIONES">
                           <th mat-header-cell *matHeaderCellDef class="encabezado"> OPCIONES </th>
                           <td mat-cell style="text-align: center;" *matCellDef="let row" >
-                              <a class="btn btn-link btn-info btn-just-icon" (click)="viewprestamo(row.solicitudkey)" matTooltipClass="primary-tooltip" matTooltip="Ver Solicitud" ><i class="fa fa-eye"></i></a>                                                               
+                              <a class="btn btn-link btn-info btn-just-icon" (click)="viewprestamo(row.prestamokey)" matTooltipClass="primary-tooltip" matTooltip="Ver Solicitud" ><i class="fa fa-eye"></i></a>                                                               
                               <a class="btn btn-link btn-warning btn-just-icon" (click)="crearPago(row);" matTooltipClass="secundary-tooltip" matTooltip="Aprobar" ><i class="fa fa-credit-card"></i></a>                                     
+                              <a class="btn btn-link btn-warning btn-just-icon" (click)="viewprestamop(row);" matTooltipClass="secundary-tooltip" matTooltip="Aprobar" ><i class="fa fa-eye"></i></a>                                     
                          
                             </td>
                         </ng-container>
                               
-                      <tr mat-header-row *matHeaderRowDef="['SOLICITUD','SALDO','FECHA','ESTADO','OPCIONES']"></tr>
-                      <tr mat-row *matRowDef="let row; columns: ['SOLICITUD','SALDO','FECHA','ESTADO','OPCIONES'];"></tr>
+                      <tr mat-header-row *matHeaderRowDef="['SOLICITUD','SALDO','CAPITAL','FECHA','ESTADO','OPCIONES']"></tr>
+                      <tr mat-row *matRowDef="let row; columns: ['SOLICITUD','SALDO','CAPITAL','FECHA','ESTADO','OPCIONES'];"></tr>
                     </table>
                   
                     <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>

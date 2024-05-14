@@ -94,6 +94,7 @@ export class ClientesComponent implements OnInit {
   }
 
   insertarS(item): void {
+    console.log(item);
     this.modalsolicitudCrear(item);
   }
 

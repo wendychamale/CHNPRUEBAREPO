@@ -5,6 +5,7 @@
  */
 package examen.chn.ExamenPractico.Model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -28,7 +29,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name="cliente", schema="SIDEP")
+@Table(name="cliente", schema="RRHH")
 public class Cliente {
 
     @Id
@@ -60,5 +61,6 @@ public class Cliente {
     Integer telefono;
 
     @OneToMany(mappedBy = "clientekey", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference    
     private List<SolicitudPrestamo> solicitudes;
 }

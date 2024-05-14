@@ -4,6 +4,8 @@
  */
 package examen.chn.ExamenPractico.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -30,7 +32,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "prestamo", schema = "SIDEP")
+@Table(name = "prestamo", schema = "RRHH")
 public class Prestamo {
 
     @Id
@@ -42,6 +44,7 @@ public class Prestamo {
     
     @ManyToOne
     @JoinColumn(name = "solicitudkey")
+    @JsonBackReference
     SolicitudPrestamo solicitudkey;
 
     @Temporal(TemporalType.TIMESTAMP)
@@ -61,6 +64,7 @@ public class Prestamo {
     
     
     @OneToMany(mappedBy = "prestamokey", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private Set<Pago> pagos;
     
 }
