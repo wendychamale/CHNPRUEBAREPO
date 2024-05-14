@@ -1,0 +1,46 @@
+<div class="main-content">
+  <div class="container-fluid">
+ 
+    <div class="titulo">
+      <p>
+        Registro Pago
+      </p>
+    </div>
+    <br>
+    <br>
+    <div>
+
+        <div style="background-color: white; padding-left: 2%; padding-right: 2%; padding-top: 0.5%; padding-bottom: 2.5%;">
+     
+          <div class="form-group">
+            <label class="etiqueta">Prestamo: </label>
+             <input matInput [(ngModel)]="clienteKey" class="textos" type="text" maxlength="100" placeholder="Plazo en Meses" >           
+        
+          </div>
+
+          <div class="form-group">
+            <label class="etiqueta">Monto: </label>
+              <input matInput [(ngModel)]="pagos.montopagado"  class="textos" type="text" maxlength="100" placeholder="Monto a pagar" >           
+          </div>
+         
+          <div class="form-group">
+            <label class="etiqueta"> Interes: </label>
+             <input matInput [(ngModel)]="pagos.interescobrado" class="textos" type="text" maxlength="100" placeholder="Tasa de intereses" readonly >           
+             
+          </div>
+
+          <div class="form-group">
+            <label class="etiqueta"> Total Pago: </label>
+             <input matInput [(ngModel)]="total" class="textos" type="text" maxlength="100" placeholder="Tasa de intereses" readonly >           
+             <label class="etiqueta">%</label>
+          </div>
+          </div>
+          <div class="button-group">
+            
+            <button  mat-raised-button class="btn btn-primary btn-block" (click)="Crearsolicitud()" style="font-size: 12px;">Pagar</button>
+          <button class="btn btn-danger btn-block" ui-sref="login" (click)="onNoClick();" style="font-size: 12px;">Cancelar</button>
+        
+          </div>
+      </div>
+  </div>
+</div>

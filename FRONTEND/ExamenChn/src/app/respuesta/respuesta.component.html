@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Hi {{data.tipo}}</h1>
+<div mat-dialog-content>
+  <p>What's your favorite animal?</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.mensaje">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">OK</button>
+</div>

@@ -1,0 +1,160 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import url( "./assets/css/demo.css");
+@import url("./assets/css/dependencia.css");
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+
+body {
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+/* Toggle Styles */
+
+#viewport {
+  padding-left: 250px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#content {
+  width: 100%;
+  position: relative;
+  margin-right: 0;
+}
+
+/* Sidebar Styles */
+
+#sidebar {
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 250px;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  background: #37474F;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#sidebar header {
+  background-color: #263238;
+  font-size: 20px;
+  line-height: 52px;
+  text-align: center;
+}
+
+#sidebar header a {
+  color: #fff;
+  display: block;
+  text-decoration: none;
+}
+
+#sidebar header a:hover {
+  color: #fff;
+}
+
+#sidebar .nav{
+  
+}
+
+#sidebar .nav a{
+  background: none;
+  border-bottom: 1px solid #455A64;
+  color: #CFD8DC;
+  font-size: 14px;
+  padding: 16px 24px;
+}
+
+#sidebar .nav a:hover{
+  background: none;
+  color: #ECEFF1;
+}
+
+#sidebar .nav a i{
+  margin-right: 16px;
+}
+
+/* You can add global styles to this file, and also import other style files */
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-blue.css";
+/*@import "~ag-grid-community/dist/styles/ag-theme-blue.css";
+@import "~ag-grid-community/dist/styles/ag-theme-material.css";
+@import "~ag-grid-community/dist/styles/ag-theme-balham.css";
+@import "~ag-grid-community/dist/styles/ag-theme-balham-dark.css";
+@import "~ag-grid-community/dist/styles/ag-theme-bootstrap.css";
+@import "~ag-grid-community/dist/styles/ag-theme-dark.css";
+@import "~ag-grid-community/dist/styles/ag-theme-fresh.css";
+*/
+
+
+.bg-gray {
+    color: #000;
+    background-color: #d2d6de !important;
+}
+
+.bg-gray-light {
+    background-color: #f7f7f7;
+}
+
+.bg-red {
+    background-color: #dd4b39 !important;
+}
+
+.bg-yellow{
+    background-color: #f39c12 !important;
+}
+
+.bg-aqua {
+    background-color: #00c0ef !important;
+  }
+
+.bg-blue {
+    background-color: #0073b7 !important;
+  }
+
+
+
+.bg-navy {
+    background-color: #001f3f !important;
+  }
+  
+  .bg-teal {
+    background-color: #39cccc !important;
+  }
+
+  .bg-olive {
+    background-color: #3d9970 !important;
+  }
+
+  .bg-lime {
+    background-color: #01ff70 !important;
+  }
+
+  .bg-orange {
+    background-color: #ff851b !important;
+  }
+
+  .bg-fuchsia {
+    background-color: #f012be !important;
+  }
+
+  .bg-purple {
+    background-color: #605ca8 !important;
+  }
+
+  .bg-maroon {
+    background-color: #d81b60 !important;
+  }
+  
+  .center {
+      text-align: center
+  }

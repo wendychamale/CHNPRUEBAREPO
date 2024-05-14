@@ -1,0 +1,68 @@
+<div class="main-content">
+  <div class="container-fluid">
+ 
+    <div class="titulo">
+      <p>
+        Creación de Clientes
+      </p>
+    </div>
+    <br>
+    <br>
+    <div>
+
+        <div style="background-color: white; padding-left: 2%; padding-right: 2%; padding-top: 0.5%; padding-bottom: 2.5%;">
+     
+          <div class="form-group">
+            <label class="etiqueta">NOMBRE: </label>
+              <input matInput [(ngModel)]="nombre"  class="textos" type="text" maxlength="100" placeholder="Nombre" >           
+          </div>
+          <div class="form-group">
+            <label class="etiqueta">APELLIDO: </label>
+             <input matInput [(ngModel)]="apellido" class="textos" type="text" maxlength="100" placeholder="Apellido" >           
+        
+          </div>
+          <div class="form-group">
+            <label class="etiqueta">CORREO: </label>
+             <input matInput [(ngModel)]="correo" class="textos" type="text" maxlength="100" placeholder="Correo" >           
+            
+          </div>
+
+          <div class="form-group">
+            <label class="etiqueta">CUI: </label>
+              <input matInput [(ngModel)]="cui" class="textos" type="text" maxlength="100" placeholder="CUI" >           
+            
+          </div>
+
+          <div class="form-group">
+            <label class="etiqueta">DIRECCION: </label>
+              <input matInput [(ngModel)]="direccion" class="textos" type="text" maxlength="100" placeholder="Direccion" >           
+              
+          </div>
+
+          <div class="form-group">
+            <label class="etiqueta">TELEFONO: </label>
+              <input matInput [(ngModel)]="telefono" class="textos" type="text" maxlength="100" placeholder="Telefono" >       
+          </div>
+
+          <div class="container-fluid" style="padding-left: inherit; padding-right: inherit;">
+            <div class="row row-cols-3">
+              <div class="form-group col">    
+                <label class="etiqueta">FECHA NACIMIENTO: </label>                                            
+                  <input matInput (click)="picker1.open()" [(ngModel)]="fechaNac" (ngModelChange)="parseDate($event)" [matDatepicker]="picker1"
+                    placeholder="FECHA NACIMIENTO"   >
+                  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                  <mat-datepicker touchUi #picker1></mat-datepicker>
+              </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="button-group">
+            
+            <button  mat-raised-button class="btn btn-primary btn-block" (click)="CrearCliente()" style="font-size: 12px;">Crear</button>
+          <button class="btn btn-danger btn-block" ui-sref="login" (click)="onNoClick();" style="font-size: 12px;">Cancelar</button>
+        
+          </div>
+      </div>
+  </div>
+</div>

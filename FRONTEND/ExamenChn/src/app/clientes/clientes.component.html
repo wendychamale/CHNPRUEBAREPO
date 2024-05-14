@@ -1,0 +1,118 @@
+    <style>
+      .encabezado {
+        font-size: 14px;
+        text-align: center;
+        font-weight: bold;
+        color: black;
+      }
+    </style> 
+  <div class="main-content" >
+    <div class="container-fluid" style="background-color: white; padding-left: 15%; padding-right: 2%; padding-top: 0.5%; padding-bottom: 2.5%;">
+
+  
+  <div class="titulo"  >
+    <p style="padding: 2px;">
+      Cliente
+    </p>
+            <i class="fa fa-building fa-3x" style="color:#FFFFFF;"></i>
+
+  </div>
+  <br>
+  <br>
+  
+  <form [formGroup]="cliente" name="formcliente" class="register-form">
+       
+       
+    <div>
+
+      <div style="background-color: white; padding-left: 2%; padding-right: 2%; padding-top: 0.5%; padding-bottom: 2.5%;">
+        <div class="=col-md-6 mx-auto mt-5 ">
+
+          <div class="container-fluid" style="padding-left: inherit; padding-right: inherit;">
+  
+            <div style="border: 2px solid #215074; padding-left: 2px; padding-right: 2px; padding-top: 10px; margin-bottom: 40px; font-size: 12px; border-radius: 5px; ">
+
+              <div class="container">
+                <div class="row mb-3">
+                  <div class="col-2" style="text-align: center;">
+                    <button mat-raised-button class="btn btn-primary" (click)="crear();" style="font-size: 12px;">
+                      <i class="fa fa-plus"></i>
+                      &nbsp;&nbsp; Crear
+                    </button>
+                    <br>
+                  </div>
+                  <div class="col-2" style="text-align: center;">
+                  </div>
+                  
+
+                  <div class="col-6" style="text-align: left; padding-left: 0px;">
+                 
+                  </div>
+
+                </div>
+              </div>
+            </div>
+             <div>
+
+                  
+                    <div  class="material-datatables; mat-elevation-z8 table-responsive" style="border: 2px solid #215074; padding-left: 10px; padding-right: 10px; padding-top: 10px; margin-bottom: 40px; font-size: 14px; border-radius: 5px; ">
+                        <table id="datatables" mat-table [dataSource]="dataSource" matSort class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%" matSort>
+                              
+                          <ng-container matColumnDef="CODIGO">
+                            <th mat-header-cell *matHeaderCellDef class="encabezado"> CÓDIGO </th>
+                            <td mat-cell style="text-align: center;" *matCellDef="let element"> {{element.clienteKey}} </td>
+                          </ng-container>
+                      
+                          <ng-container matColumnDef="NOMBRE">
+                            <th mat-header-cell *matHeaderCellDef class="encabezado"> NOMBRE </th>
+                            <td mat-cell style="text-align: center;" *matCellDef="let element"> {{element.nombre}} </td>
+                          </ng-container>
+                      
+                          <ng-container matColumnDef="APELLIDO">
+                            <th mat-header-cell *matHeaderCellDef class="encabezado"> APELLIDO </th>
+                            <td mat-cell style="text-align: center;" *matCellDef="let element"> {{element.apellido}} </td>
+                          </ng-container>
+
+                          <ng-container matColumnDef="CUI">
+                            <th mat-header-cell *matHeaderCellDef class="encabezado"> CUI </th>
+                            <td mat-cell style="text-align: center;" *matCellDef="let element"> {{element.cui}} </td>
+                          </ng-container>
+                            
+                          <ng-container matColumnDef="OPCIONES">
+                              <th mat-header-cell *matHeaderCellDef class="encabezado"> OPCIONES </th>
+                              <td mat-cell style="text-align: center;" *matCellDef="let row" >
+                                  <a class="btn btn-link btn-info btn-just-icon" (click)="viewcliente(row);" matTooltipClass="primary-tooltip" matTooltip="Ver Dependencia" ><i class="fa fa-eye"></i></a>                                                               
+                                  <a class="btn btn-link btn-warning btn-just-icon" (click)="actualizar(row.clienteKey);" matTooltipClass="secundary-tooltip" matTooltip="Actualizar" ><i class="fa fa-edit"></i></a>                                     
+                                  <a class="btn btn-link btn-danger btn-just-icon"  (click)="eliminar(row);" matTooltipClass="primary-tooltip" matTooltip="Eliminar Cliente"><i class="fa fa-trash"></i></a>                                           
+                                  <a class="btn btn-link btn-success btn-just-icon" (click)="insertarS(row.clienteKey);" matTooltipClass="primary-tooltip" matTooltip="Crear Solicitud" ><i class="fa fa-plus-square"></i></a>                                     
+                                         
+                                </td>
+                            </ng-container>
+                                  
+                          <tr mat-header-row *matHeaderRowDef="['CODIGO','NOMBRE','APELLIDO','CUI','OPCIONES']"></tr>
+                          <tr mat-row *matRowDef="let row; columns: ['CODIGO','NOMBRE','APELLIDO','CUI','OPCIONES'];"></tr>
+                        </table>
+                      
+                        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                      </div>
+                        
+                  <!--End Upoload File-->
+  
+                </div>
+            <!--aquiiiiii sigo-->
+
+            <div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </form>
+
+
+
+
+
+  </div>
+  </div>
