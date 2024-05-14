@@ -4,6 +4,7 @@
  */
 package examen.chn.ExamenPractico.Model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,12 +12,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.Set;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -48,12 +51,16 @@ public class Prestamo {
     @ManyToOne
     @JoinColumn(name = "estadokey")
     private Estado estado;
-    
+
     
     @Column(name = "saldopendiente")
     Double saldopendiente;
-    
-     @Column(name = "saldopendientecapital")
+
+    @Column(name = "saldopendientecapital")
     Double saldopendientecapital;
+    
+    
+    @OneToMany(mappedBy = "prestamokey", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Pago> pagos;
     
 }

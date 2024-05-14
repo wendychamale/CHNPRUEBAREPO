@@ -76,6 +76,14 @@ public class ClienteService {
 
     }
    
+  
+    @Transactional
+    public void deleteClienteById(Integer id) {
+        if (!clienteRepository.existsById(id)) {
+            throw new RuntimeException("Cliente no encontrado");
+        }
+        clienteRepository.deleteById(id);
+    }
     private Date convertirFecha(String dateString) throws ParseException{
        String dateFormat = "dd/MM/yyyy";
        SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
